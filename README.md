@@ -2,7 +2,7 @@
 
 ### My version of popular guessing game.
 
-<img src="https://github.com/tukarp/Hangman/blob/main/Hangman.jpg" width="200" height="200"> 
+<img src="https://github.com/tukarp/Hangman/blob/main/Hangman.jpg" width="300" height="300"> 
 
 You can play it right now under this link:
 
