@@ -371,17 +371,17 @@ class Hangman:
             print(f"You lost: {self.games_lost} times")
 
 
+    # printing hangman based on current attempts
+    def print_hangman(self):
+        # printing hangman
+        print(self.HANGMAN_LIST[self.attempts])
+
+
     # replacing string at given index with given character
     @staticmethod
     def replace_string_at_index(word, character, index):
         new_word = word[:index] + character + word[index + 1:]
         return new_word
-
-
-    # printing hangman based on current attempts
-    def print_hangman(self):
-        # printing hangman
-        print(self.HANGMAN_LIST[self.attempts])
 
 
 # main function
