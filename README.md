@@ -1,6 +1,6 @@
 # Hangman
 
-### My version of popular guessing game.
+### My version of popular letter guessing game.
 
 <img src="https://github.com/tukarp/Hangman/blob/main/Images/Hangman.jpg" width="350" height="300"> 
 
