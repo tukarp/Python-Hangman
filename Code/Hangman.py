@@ -384,11 +384,13 @@ class Hangman:
         return new_word
 
 
-# main function
+# define main function
 def main():
+    # create Hangman object
     Hangman()
 
 
-# main
+# main function
 if __name__ == "__main__":
+    # call main function
     main()
