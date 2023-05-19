@@ -2,16 +2,16 @@
 # Made by github.com/tukarp
 
 
-# importing library
+# Importing library
 import random
 
 
 # Hangman class
 class Hangman:
-    # initialize variables and methods
+    # Initialize variables and methods
     def __init__(self):
-        # game setup
-        # main variables
+        # Game setup
+        # Main variables
         self.games_won = 0      # games won
         self.games_lost = 0     # games lost
         self.attempts = None    # attempts
@@ -19,20 +19,20 @@ class Hangman:
 
 
 
-        # guessing variables
-        self.category = None            # player chosen category for random guessing_word
-        self.word_to_guess = None       # random word to guess from chosen category
-        self.guessing_word = None       # guessing_word that changes when players guesses a letter
-        self.win_check = None           # word to compare to check if player has won
-        self.guess = None               # current player guess
-        self.letters_to_swap = None     # letters to swap in guessing_word counter
-        self.index = None               # index the letter need to be swapped at in guessing_word
-        self.guesses_list = None        # list of players earlier guesses
+        # Guessing variables
+        self.category = None            # Player chosen category for random guessing_word
+        self.word_to_guess = None       # Random word to guess from chosen category
+        self.guessing_word = None       # Guessing_word that changes when players guesses a letter
+        self.win_check = None           # Word to compare to check if player has won
+        self.guess = None               # Current player guess
+        self.letters_to_swap = None     # Letters to swap in guessing_word counter
+        self.index = None               # Index the letter need to be swapped at in guessing_word
+        self.guesses_list = None        # List of players earlier guesses
 
 
 
-        # hangman drawing at different attempts left
-        # hangman at 8 attempts left
+        # Hangman drawing at different attempts left
+        # Hangman at 8 attempts left
         self.HANGMAN_8 = """
 
 
@@ -42,7 +42,7 @@ class Hangman:
                                ---
                 """
 
-        # hangman at 7 attempts left
+        # Hangman at 7 attempts left
         self.HANGMAN_7 = """
                                 |           
                                 |           
@@ -52,7 +52,7 @@ class Hangman:
                                ---          
                 """
 
-        # hangman at 6 attempts left
+        # Hangman at 6 attempts left
         self.HANGMAN_6 = """
                                 --------- 
                                 |       | 
@@ -63,7 +63,7 @@ class Hangman:
                                ---        
                 """
 
-        # hangman at 5 attempts left
+        # Hangman at 5 attempts left
         self.HANGMAN_5 = """
                                 --------- 
                                 |       | 
@@ -74,7 +74,7 @@ class Hangman:
                                ---
                 """
 
-        # hangman at 4 attempts left
+        # Hangman at 4 attempts left
         self.HANGMAN_4 = """
                                 --------- 
                                 |       | 
@@ -85,7 +85,7 @@ class Hangman:
                                ---
                 """
 
-        # hangman at 3 attempts left
+        # Hangman at 3 attempts left
         self.HANGMAN_3 = """
                                 --------- 
                                 |       | 
@@ -96,7 +96,7 @@ class Hangman:
                                ---
                 """
 
-        # hangman at 2 attempts left
+        # Hangman at 2 attempts left
         self.HANGMAN_2 = """
                                 ---------   
                                 |       |   
@@ -107,7 +107,7 @@ class Hangman:
                                ---          
                 """
 
-        # hangman at 1 attempt left
+        # Hangman at 1 attempt left
         self.HANGMAN_1 = """
                                 ---------   
                                 |       |   
@@ -118,7 +118,7 @@ class Hangman:
                                ---          
                 """
 
-        # hangman at 0 attempts left
+        # Hangman at 0 attempts left
         self.HANGMAN_0 = """
                                 ---------   
                                 |       |   
@@ -129,268 +129,289 @@ class Hangman:
                                ---          
                 """
 
-        # list with hangman versions for every attempt
+        # List with hangman versions for every attempt
         self.HANGMAN_LIST = [self.HANGMAN_0, self.HANGMAN_1, self.HANGMAN_2, self.HANGMAN_3, self.HANGMAN_4,
                              self.HANGMAN_5, self.HANGMAN_6, self.HANGMAN_7, self.HANGMAN_8]
 
 
 
-        # guessing categories and their contents
-        # fruits guessing list
+        # Guessing categories and their contents
+        # Fruits guessing list
         self.FRUITS_LIST = ["banana", "strawberry", "grape", "apple", "watermelon",
                             "orange", "blueberry", "lemon", "peach", "avocado", "cherry",
                             "cantaloupe", "raspberry", "pear", "lime", "blackberry", "clementine",
                             "mango", "plum"]
 
-        # vegetables guessing list
+        # Vegetables guessing list
         self.VEGETABLES_LIST = ["potato", "tomato", "onion", "carrot", "beetroot", "broccoli",
                                 "cucumber", "salad", "lettuce", "celery", "mushroom", "corn", "garlic",
                                 "spinach", "bean", "cabbage", "peas", "green onion", "cauliflower", "asparagus"]
 
-        # animals guessing list
+        # Animals guessing list
         self.ANIMALS_LIST = ["cat", "dog", "rabbit", "horse", "chicken", "pig",
                              "cow", "sheep", "bird", "parrot", "frog", "spider", "bear",
                              "snake", "hamster", "monkey", "lion", "zebra", "shark", "fish"]
 
-        # car brands guessing list
+        # Car brands guessing list
         self.CAR_BRANDS_LIST = ["chevrolet", "honda", "nissan", "ford", "fiat", "jeep",
                                 "volkswagen", "volvo", "jaguar", "audi", "toyota", "tesla", "lexus",
                                 "porsche", "bugatti", "bentley", "hyundai", "bmw", "mercedes", "seat"]
 
-        # countries guessing list
+        # Countries guessing list
         self.COUNTRIES_LIST = ["poland", "korea", "japan", "iceland", "england", "germany",
                             "ukraine", "france", "spain", "italy", "romania", "greece", "usa",
                             "australia",  "canada", "mexico", "brazil", "argentina", "morocco", "egypt"]
 
-        # categories list
+        # Categories list
         self.categories = [self.FRUITS_LIST, self.VEGETABLES_LIST, self.ANIMALS_LIST, self.CAR_BRANDS_LIST, self.COUNTRIES_LIST]
 
 
 
-        # starting game
+        # Starting game
         self.menu()
 
 
-    # game menu method
+    # Game menu method
     def menu(self):
-        # menu loop
+        # Menu loop
         while True:
-            # printing menu
+            # Printing menu
             print("Menu")
             print("Type 'play' - to play the game")
             print("Type 'results' - to see the results")
             print("Type 'exit' - to exit the program")
 
-            # getting user input
+            # Getting user input
             self.user_input = input()
 
-            # choosing programs feature
-            # case for starting the game
+            # Choosing programs feature
+            # Case for starting the game
             if self.user_input == "play":
+                # Calling game method
                 self.game()
-            # case for displaying the results
+            # Case for displaying the results
             elif self.user_input == "results":
+                # Calling print results method
                 self.print_results()
-            # case for exiting program
+            # Case for exiting program
             elif self.user_input == "exit":
+                # Exiting program
                 break
-            # case for wrong input
+            # Case for wrong input
             else:
+                # Printing error message
                 print("Choose a correct option")
 
 
-    # game loop
+    # Game loop
     def game(self):
-        # player choosing a category
+        # Player choosing a category
         self.category = self.choose_category()
 
-        # initializing player attempts
+        # Initializing player attempts
         self.attempts = 8
 
-        # initializing list of players earlier guesses
+        # Initializing list of players earlier guesses
         self.guesses_list = []
 
-        # selecting a random word to guess from chosen category
+        # Selecting a random word to guess from chosen category
         self.word_to_guess = random.choice(self.categories[self.category])
 
-        # initializing a guessing_word that changes when players guesses a letter
+        # Initializing a guessing_word that changes when players guesses a letter
         self.guessing_word = ((len(self.word_to_guess)) * "-")
 
-        # initializing word to compare to check if player has won
+        # Initializing word to compare to check if player has won
         self.win_check = self.word_to_guess
 
-        # starting game text
+        # Starting game text
         print("H A N G M A N")
         print(f"# {self.attempts} attempts")
 
-        # game loop
+        # Game loop
         while self.attempts > 0:
-            # checking if player guessed the word
+            # Checking if player guessed the word
             if self.guessing_word == self.win_check:
-                # printing guessing_word message
+                # Printing guessing_word message
                 print(f"You guessed the word {self.guessing_word}!")
 
-                # printing "You survived!" message
+                # Printing "You survived!" message
                 print("You survived!")
 
-                # keeping track of games won
+                # Keeping track of games won
                 self.games_won += 1
 
-                # breaking loop
+                # Breaking loop
                 break
 
-            # printing hangman
+            # Printing hangman
             self.print_hangman()
 
-            # printing length of the word
+            # Printing length of the word
             print(f"Length of the word is {len(self.guessing_word)}")
 
-            # if list isn't empty
+            # If list isn't empty
             if len(self.guesses_list) > 0:
-                # printing previous guesses
+                # Printing previous guesses
                 print(f"Previous guesses: {self.guesses_list}")
 
-            # getting correct input
+            # Getting correct input
             self.guess = self.get_input()
 
-            # checking the word
-            # case for guessing the correct letter in guessing_word
+            # Checking the word
+            # Case for guessing the correct letter in guessing_word
             if self.guess in self.word_to_guess:
-                # checking if multiple letters needs to be swapped in guessing_word
+                # Checking if multiple letters needs to be swapped in guessing_word
                 self.letters_to_swap = self.word_to_guess.count(self.guess)
 
-                # swapping characters in word_to_guess and guessing_word as many times as needed
+                # Swapping characters in word_to_guess and guessing_word as many times as needed
                 for i in range(self.letters_to_swap):
-                    # swapping blank in word_to_guess with guessed letter
-                    self.index = self.word_to_guess.find(self.guess)  # getting the index of word_to_guess to swap the letter in guessing_word
-                    self.word_to_guess = self.replace_string_at_index(self.word_to_guess, "-", self.index)  # replacing guessed letter with blank in word_to_guess
-                    self.guessing_word = self.replace_string_at_index(self.guessing_word, self.guess, self.index)  # replacing blank with guessed letter in guessing_word
-            # case for checking if player already guessed this letter
+                    # Swapping blank in word_to_guess with guessed letter
+                    self.index = self.word_to_guess.find(self.guess)  # Getting the index of word_to_guess to swap the letter in guessing_word
+                    self.word_to_guess = self.replace_string_at_index(self.word_to_guess, "-", self.index)  # Replacing guessed letter with blank in word_to_guess
+                    self.guessing_word = self.replace_string_at_index(self.guessing_word, self.guess, self.index)  # Replacing blank with guessed letter in guessing_word
+            # Case for checking if player already guessed this letter
             elif self.guess in self.guesses_list:
-                # printing that player is already guessed this letter
+                # Printing that player is already guessed this letter
                 print("You've already guessed this letter!")
             else:
-                # case for guessing wrong letter
+                # Case for guessing wrong letter
                 print("That letter doesn't appear in the word!")
-                # subtract attempts after wrong guess
+                # Subtract attempts after wrong guess
                 self.attempts -= 1
 
-            # displaying the amount of attempts
-            # if attempts isn't equal to 1
+            # Displaying the amount of attempts
+            # If attempts isn't equal to 1
             if self.attempts != 1:
+                # Printing attempts
                 print(f"# {self.attempts} attempts")
             else:
+                # Printing attempt
                 print(f"# {self.attempts} attempt")
 
-            # adding guessed letter to list
+            # Adding guessed letter to list
             self.guesses_list.append(self.guess)
 
-        # case for when player runs out of attempts
+        # Case for when player runs out of attempts
         else:
-            # printing hangman
+            # Printing hangman
             self.print_hangman()
 
-            # printing "You lost!" message
+            # Printing "You lost!" message
             print("You lost!")
 
-            # printing word to guess
+            # Printing word to guess
             print(f"The word was: {self.win_check}")
 
-            # keeping track of results
+            # Keeping track of results
             self.games_lost += 1
 
 
-    # player choosing category for game
+    # Player choosing category for game
     def choose_category(self):
-        # printing available categories
+        # Printing available categories
         print(f"Choose category: fruits, vegetables, animals, car_brands, countries: ")
 
-        # getting correct input loop
+        # Getting correct input loop
         while True:
-            # getting user input
+            # Getting user input
             self.user_input = input()
 
-            # returning numbers which will be indexes of list with categories
-            # case for fruits
+            # Returning numbers which will be indexes of list with categories
+            # Case for fruits
             if self.user_input == "fruits":
+                # Returning fruits index in categories list
                 return 0
-            # case for vegetables
+            # Case for vegetables
             elif self.user_input == "vegetables":
+                # Returning vegetables index in categories list
                 return 1
-            # case for animals
+            # Case for animals
             elif self.user_input == "animals":
+                # Returning animals index in categories list
                 return 2
-            # case car_brands
+            # Case car_brands
             elif self.user_input == "car_brands":
+                # Returning car_brands index in categories list
                 return 3
-            # case for countries
+            # Case for countries
             elif self.user_input == "countries":
+                # Returning countries index in categories list
                 return 4
-            # case for wrong input
+            # Case for wrong input
             else:
+                # Printing error message
                 print("Choose a correct category")
 
 
-    # getting correct input from player
+    # Getting correct input from player
     def get_input(self):
-        # getting correct input loop
+        # Getting correct input loop
         while True:
-            # printing guessing_word
+            # Printing guessing_word
             print(self.guessing_word)
 
-            # getting user input
+            # Getting user input
             self.user_input = input("Input a letter: ")
 
-            # case for when input isn't a single letter
+            # Case for when input isn't a single letter
             if len(self.user_input) != 1:
+                # Printing error message for input not being a single letter
                 print("Please, input a single letter! \n")
-            # case when input is single letter
+            # Case when input is single letter
             else:
-                # case for when letter isn't a lower case letter or an ASCII symbol
+                # Case for when letter isn't a lower case letter or an ASCII symbol
                 if self.user_input.isupper() or not ((self.user_input >= "a") and (self.user_input <= "z")):
+                    # Printing error message for symbol not being lowercase letter from the English alphabet
                     print("Please, enter a lowercase letter from the English alphabet! \n")
-                # case for correct input
+                # Case for correct input
                 else:
+                    # Returning user input
                     return self.user_input
 
 
-    # printing results for multiple or single won games
+    # Printing results for multiple or single won games
     def print_results(self):
-        # case for single game won
+        # Case for single game won
         if self.games_won == 1:
+            # Printing results for single game won
             print(f"You won: {self.games_won} time")
-        # case for multiple games won
+        # Case for multiple games won
         else:
+            # Printing results for multiple games won
             print(f"You won: {self.games_won} times")
 
-        # printing results for single lost game
+        # Printing results for single lost game
         if self.games_lost == 1:
+            # Printing results for single lost game
             print(f"You lost: {self.games_lost} time")
-        # printing results for multiple lost game
+        # Printing results for multiple lost game
         else:
+            # Printing results for multiple lost game
             print(f"You lost: {self.games_lost} times")
 
 
-    # printing hangman based on current attempts
+    # Printing hangman based on current attempts
     def print_hangman(self):
-        # printing hangman
+        # Printing hangman
         print(self.HANGMAN_LIST[self.attempts])
 
 
-    # replacing string at given index with given character
+    # Replacing string at given index with given character
     @staticmethod
     def replace_string_at_index(word, character, index):
+        # Creating new word with replaced character
         new_word = word[:index] + character + word[index + 1:]
+        # Returning new word
         return new_word
 
 
-# define main function
+# Define main function
 def main():
-    # create Hangman object
+    # Create Hangman object
     Hangman()
 
 
-# main function
+# Main function
 if __name__ == "__main__":
-    # call main function
+    # Call main function
     main()
