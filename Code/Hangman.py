@@ -12,10 +12,10 @@ class Hangman:
     def __init__(self):
         # Game setup
         # Main variables
-        self.games_won = 0      # games won
-        self.games_lost = 0     # games lost
-        self.attempts = None    # attempts
-        self.user_input = None  # user input
+        self.games_won = 0      # Games won
+        self.games_lost = 0     # Games lost
+        self.attempts = None    # Attempts
+        self.user_input = None  # User input
 
 
 
