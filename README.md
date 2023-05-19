@@ -10,11 +10,11 @@
 https://replit.com/@tukarp/Python-Hangman
 ```
 
-## Requirements
+### Requirements
 
 - ```Python```
 
-## Installation
+### Installation
 
 ```
 git clone https://github.com/tukarp/Python-Hangman.git
