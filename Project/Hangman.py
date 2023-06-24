@@ -7,7 +7,7 @@ import random
 
 
 # Initializing logo
-logo = """                                                                                  
+LOGO = """                                                                                  
                         _  _                                                      
                        | || |__ _ _ _  __ _ _ __  __ _ _ _                        
                        | __ / _` | ' \/ _` | '  \/ _` | ' \                       
@@ -182,7 +182,7 @@ class Hangman:
 
 
         # Printing logo
-        print(logo)
+        print(LOGO)
 
         # Starting game
         self.menu()
