@@ -6,6 +6,16 @@
 import random
 
 
+# Initializing logo
+logo = """                                                                                  
+                        _  _                                                      
+                       | || |__ _ _ _  __ _ _ __  __ _ _ _                        
+                       | __ / _` | ' \/ _` | '  \/ _` | ' \                       
+                       |_||_\__,_|_||_\__, |_|_|_\__,_|_||_|                      
+                                      |___/                                       
+                                                                                  """
+
+
 # Hangman class
 class Hangman:
     # Initialize variables and methods
@@ -33,101 +43,105 @@ class Hangman:
 
         # Hangman drawing at different attempts left
         # Hangman at 8 attempts left
-        self.HANGMAN_8 = """
-
-
-
-
-
-                               ---
-                """
+        self.HANGMAN_8 = """|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                  ---                                           |
+[================================================================================]"""
 
         # Hangman at 7 attempts left
-        self.HANGMAN_7 = """
-                                |           
-                                |           
-                                |           
-                                |           
-                                |           
-                               ---          
-                """
+        self.HANGMAN_7 = """|                                                                                |
+|                                                                                |
+|                                   |                                            |
+|                                   |                                            |
+|                                   |                                            |
+|                                   |                                            |
+|                                   |                                            |
+|                                  ---                                           |
+[================================================================================]"""
 
         # Hangman at 6 attempts left
-        self.HANGMAN_6 = """
-                                --------- 
-                                |       | 
-                                |         
-                                |         
-                                |         
-                                |         
-                               ---        
-                """
+        self.HANGMAN_6 = """|                                                                                |
+|                                   ----------                                   |
+|                                   |        |                                   |
+|                                   |                                            |
+|                                   |                                            |
+|                                   |                                            |
+|                                   |                                            |
+|                                  ---                                           |
+[================================================================================]"""
 
         # Hangman at 5 attempts left
-        self.HANGMAN_5 = """
-                                --------- 
-                                |       | 
-                                |       O 
-                                |         
-                                |         
-                                |         
-                               ---
-                """
+        self.HANGMAN_5 = """|                                                                                |
+|                                   ----------                                   |
+|                                   |        |                                   |
+|                                   |        O                                   |
+|                                   |                                            |
+|                                   |                                            |
+|                                   |                                            |
+|                                  ---                                           |
+[================================================================================]"""
 
         # Hangman at 4 attempts left
-        self.HANGMAN_4 = """
-                                --------- 
-                                |       | 
-                                |       O 
-                                |       | 
-                                |       | 
-                                |         
-                               ---
-                """
+        self.HANGMAN_4 = """|                                                                                |
+|                                   ----------                                   |
+|                                   |        |                                   |
+|                                   |        O                                   |
+|                                   |        |                                   |
+|                                   |        |                                   |
+|                                   |                                            |
+|                                  ---                                           |
+[================================================================================]"""
 
         # Hangman at 3 attempts left
-        self.HANGMAN_3 = """
-                                --------- 
-                                |       | 
-                                |       O 
-                                |      /| 
-                                |       | 
-                                |         
-                               ---
-                """
+        self.HANGMAN_3 = """|                                                                                |
+|                                   ----------                                   |
+|                                   |        |                                   |
+|                                   |        O                                   |
+|                                   |       /|                                   |
+|                                   |        |                                   |
+|                                   |                                            |
+|                                  ---                                           |
+[================================================================================]"""
 
         # Hangman at 2 attempts left
-        self.HANGMAN_2 = """
-                                ---------   
-                                |       |   
-                                |       O   
-                                |      /|\  
-                                |       |   
-                                |           
-                               ---          
-                """
+        self.HANGMAN_2 = """|                                                                                |
+|                                   ----------                                   |
+|                                   |        |                                   |
+|                                   |        O                                   |
+|                                   |       /|\                                  |
+|                                   |        |                                   |
+|                                   |                                            |
+|                                  ---                                           |
+[================================================================================]"""
 
         # Hangman at 1 attempt left
-        self.HANGMAN_1 = """
-                                ---------   
-                                |       |   
-                                |       O   
-                                |      /|\  
-                                |       |   
-                                |      /     
-                               ---          
-                """
+        self.HANGMAN_1 = """|                                                                                |
+|                                   ----------                                   |
+|                                   |        |                                   |
+|                                   |        O                                   |
+|                                   |       /|\                                  |
+|                                   |        |                                   |
+|                                   |       /                                    |
+|                                  ---                                           |
+[================================================================================]"""
 
         # Hangman at 0 attempts left
-        self.HANGMAN_0 = """
-                                ---------   
-                                |       |   
-                                |       O   
-                                |      /|\  
-                                |       |   
-                                |      / \     
-                               ---          
-                """
+        self.HANGMAN_0 = """|                                                                                |
+|                                   ----------                                   |
+|                                   |        |                                   |
+|                                   |        O                                   |
+|                                   |       /|\                                  |
+|                                   |        |                                   |
+|                                   |       / \                                  |
+|                                  ---                                           |
+[================================================================================]"""
+
+
 
         # List with hangman versions for every attempt
         self.HANGMAN_LIST = [self.HANGMAN_0, self.HANGMAN_1, self.HANGMAN_2, self.HANGMAN_3, self.HANGMAN_4,
@@ -167,6 +181,9 @@ class Hangman:
 
 
 
+        # Printing logo
+        print(logo)
+
         # Starting game
         self.menu()
 
@@ -176,13 +193,16 @@ class Hangman:
         # Menu loop
         while True:
             # Printing menu
-            print("Menu")
-            print("Type 'play' - to play the game")
-            print("Type 'results' - to see the results")
-            print("Type 'exit' - to exit the program")
+            print("[================================================================================]")
+            print("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|")
+            print("|================================================================================|")
+            print("| Type 'play' - to play the game                                                 |")
+            print("| Type 'results' - to see the results                                            |")
+            print("| Type 'exit' - to exit the program                                              |")
+            print("[================================================================================]")
 
             # Getting user input
-            self.user_input = input()
+            self.user_input = input("| Choose an option: ")
 
             # Choosing programs feature
             # Case for starting the game
@@ -224,35 +244,23 @@ class Hangman:
         self.win_check = self.word_to_guess
 
         # Starting game text
-        print("H A N G M A N")
-        print(f"# {self.attempts} attempts")
+        print("[================================================================================]")
+        print("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ H A N G M A N ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|")
+        print("|================================================================================|")
+        print(f"| # {self.attempts} attempts                                                                   |")
 
         # Game loop
         while self.attempts > 0:
-            # Checking if player guessed the word
-            if self.guessing_word == self.win_check:
-                # Printing guessing word message
-                print(f"You guessed the word {self.guessing_word}!")
-
-                # Printing "You survived!" message
-                print("You survived!")
-
-                # Keeping track of games won
-                self.games_won += 1
-
-                # Breaking loop
-                break
-
             # Printing hangman
             self.print_hangman()
 
             # Printing length of the word
-            print(f"Length of the word is {len(self.guessing_word)}")
+            print(f"| Length of the word is {len(self.guessing_word)}")
 
             # If list isn't empty
             if len(self.guesses_list) > 0:
                 # Printing previous guesses
-                print(f"Previous guesses: {self.guesses_list}")
+                print(f"| Previous guesses: {self.guesses_list}")
 
             # Getting correct input
             self.guess = self.get_input()
@@ -272,21 +280,43 @@ class Hangman:
             # Case for checking if player already guessed this letter
             elif self.guess in self.guesses_list:
                 # Printing that player is already guessed this letter
-                print("You've already guessed this letter!")
+                print("| You've already guessed this letter!")
             else:
                 # Case for guessing wrong letter
-                print("That letter doesn't appear in the word!")
+                print("| That letter doesn't appear in the word!")
                 # Subtract attempts after wrong guess
                 self.attempts -= 1
+
+            # Printing User interface line
+            print("[================================================================================]")
+
+            # Checking if player guessed the word
+            if self.guessing_word == self.win_check:
+                # Checking if player won with 1 attempt left
+                if self.attempts != 1:
+                    # Printing "You survived!" message for more than 1 attempt left
+                    print(f"| You survived with {self.attempts} attempts left!")
+                else:
+                    # Printing "You survived!" message for 1 attempt left
+                    print(f"| You survived with {self.attempts} attempt left!")
+
+                # Printing guessing word message
+                print(f"| You guessed the word '{self.guessing_word}'!")
+
+                # Keeping track of games won
+                self.games_won += 1
+
+                # Breaking loop
+                break
 
             # Displaying the amount of attempts
             # If attempts isn't equal to 1
             if self.attempts != 1:
                 # Printing attempts
-                print(f"# {self.attempts} attempts")
+                print(f"| # {self.attempts} attempts                                                                   |")
             else:
                 # Printing attempt
-                print(f"# {self.attempts} attempt")
+                print(f"| # {self.attempts} attempt                                                                    |")
 
             # Adding guessed letter to list
             self.guesses_list.append(self.guess)
@@ -297,10 +327,10 @@ class Hangman:
             self.print_hangman()
 
             # Printing "You lost!" message
-            print("You lost!")
+            print("| You lost!")
 
             # Printing word to guess
-            print(f"The word was: {self.win_check}")
+            print(f"| The word was '{self.win_check}'!")
 
             # Keeping track of results
             self.games_lost += 1
@@ -308,39 +338,47 @@ class Hangman:
 
     # Player choosing category for game
     def choose_category(self):
-        # Printing available categories
-        print("Choose category: fruits, vegetables, animals, car_brands, countries")
+        # Printing menu for choosing category
+        print("[================================================================================]")
+        print("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Choose category ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|")
+        print("[================================================================================]")
+        print("| 1. fruits                                                                      |")
+        print("| 2. vegetables                                                                  |")
+        print("| 3. animals                                                                     |")
+        print("| 4. car brands                                                                  |")
+        print("| 5. countries                                                                   |")
+        print("[================================================================================]")
 
         # Getting correct input loop
         while True:
             # Getting user input
-            self.user_input = input()
+            self.user_input = input("| Choose a category: ")
 
             # Returning numbers which will be indexes of list with categories
             # Case for fruits
-            if self.user_input == "fruits":
+            if self.user_input == "fruits" or self.user_input == "1":
                 # Returning fruits index in categories list
                 return 0
             # Case for vegetables
-            elif self.user_input == "vegetables":
+            elif self.user_input == "vegetables" or self.user_input == "2":
                 # Returning vegetables index in categories list
                 return 1
             # Case for animals
-            elif self.user_input == "animals":
+            elif self.user_input == "animals" or self.user_input == "3":
                 # Returning animals index in categories list
                 return 2
             # Case car brands
-            elif self.user_input == "car_brands":
+            elif self.user_input == "car brands" or self.user_input == "4":
                 # Returning car brands index in categories list
                 return 3
             # Case for countries
-            elif self.user_input == "countries":
+            elif self.user_input == "countries" or self.user_input == "5":
                 # Returning countries index in categories list
                 return 4
             # Case for wrong input
             else:
                 # Printing error message
-                print("Choose a correct category")
+                print("| Choose a correct category")
 
 
     # Getting correct input from player
@@ -348,21 +386,21 @@ class Hangman:
         # Getting correct input loop
         while True:
             # Printing guessing word
-            print(self.guessing_word)
+            print(f"| Guessing word: [{self.guessing_word}]")
 
             # Getting user input
-            self.user_input = input("Input a letter: ")
+            self.user_input = input("| Input a letter: ")
 
             # Case for when input isn't a single letter
             if len(self.user_input) != 1:
                 # Printing error message for input not being a single letter
-                print("Please, input a single letter! \n")
+                print("| Please, input a single letter!")
             # Case when input is single letter
             else:
                 # Case for when letter isn't a lower case letter or an ASCII symbol
                 if self.user_input.isupper() or not ((self.user_input >= "a") and (self.user_input <= "z")):
                     # Printing error message for symbol not being lowercase letter from the English alphabet
-                    print("Please, enter a lowercase letter from the English alphabet! \n")
+                    print("| Please, enter a lowercase letter from the English alphabet!")
                 # Case for correct input
                 else:
                     # Returning user input
@@ -371,23 +409,28 @@ class Hangman:
 
     # Printing results for multiple or single won games
     def print_results(self):
+        # Printing results
+        print("[================================================================================]")
+        print("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Results ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|")
+        print("|================================================================================|")
+
         # Case for single game won
         if self.games_won == 1:
             # Printing results for single game won
-            print(f"You won: {self.games_won} time")
-        # Case for multiple games won
+            print(f"| You won: {self.games_won} time                                                                |")
+            # Case for multiple games won
         else:
             # Printing results for multiple games won
-            print(f"You won: {self.games_won} times")
+            print(f"| You won: {self.games_won} times                                                               |")
 
         # Printing results for single lost game
         if self.games_lost == 1:
             # Printing results for single lost game
-            print(f"You lost: {self.games_lost} time")
+            print(f"| You lost: {self.games_lost} time                                                               |")
         # Printing results for multiple lost game
         else:
             # Printing results for multiple lost game
-            print(f"You lost: {self.games_lost} times")
+            print(f"| You lost: {self.games_lost} times                                                              |")
 
 
     # Printing hangman based on current attempts
