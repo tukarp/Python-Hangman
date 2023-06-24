@@ -20,13 +20,13 @@ class Hangman:
 
 
         # Guessing variables
-        self.category = None            # Player chosen category for random guessing_word
+        self.category = None            # Player chosen category for random guessing word
         self.word_to_guess = None       # Random word to guess from chosen category
-        self.guessing_word = None       # Guessing_word that changes when players guesses a letter
+        self.guessing_word = None       # Guessing word that changes when players guesses a letter
         self.win_check = None           # Word to compare to check if player has won
         self.guess = None               # Current player guess
-        self.letters_to_swap = None     # Letters to swap in guessing_word counter
-        self.index = None               # Index the letter need to be swapped at in guessing_word
+        self.letters_to_swap = None     # Letters to swap in guessing word counter
+        self.index = None               # Index the letter need to be swapped at in guessing word
         self.guesses_list = None        # List of players earlier guesses
 
 
@@ -217,7 +217,7 @@ class Hangman:
         # Selecting a random word to guess from chosen category
         self.word_to_guess = random.choice(self.categories[self.category])
 
-        # Initializing a guessing_word that changes when players guesses a letter
+        # Initializing a guessing word that changes when players guesses a letter
         self.guessing_word = ((len(self.word_to_guess)) * "-")
 
         # Initializing word to compare to check if player has won
@@ -231,7 +231,7 @@ class Hangman:
         while self.attempts > 0:
             # Checking if player guessed the word
             if self.guessing_word == self.win_check:
-                # Printing guessing_word message
+                # Printing guessing word message
                 print(f"You guessed the word {self.guessing_word}!")
 
                 # Printing "You survived!" message
@@ -258,17 +258,17 @@ class Hangman:
             self.guess = self.get_input()
 
             # Checking the word
-            # Case for guessing the correct letter in guessing_word
+            # Case for guessing the correct letter in guessing word
             if self.guess in self.word_to_guess:
-                # Checking if multiple letters needs to be swapped in guessing_word
+                # Checking if multiple letters needs to be swapped in guessing word
                 self.letters_to_swap = self.word_to_guess.count(self.guess)
 
-                # Swapping characters in word_to_guess and guessing_word as many times as needed
+                # Swapping characters in word to guess and guessing word as many times as needed
                 for i in range(self.letters_to_swap):
                     # Swapping blank in word_to_guess with guessed letter
-                    self.index = self.word_to_guess.find(self.guess)  # Getting the index of word_to_guess to swap the letter in guessing_word
-                    self.word_to_guess = self.replace_string_at_index(self.word_to_guess, "-", self.index)  # Replacing guessed letter with blank in word_to_guess
-                    self.guessing_word = self.replace_string_at_index(self.guessing_word, self.guess, self.index)  # Replacing blank with guessed letter in guessing_word
+                    self.index = self.word_to_guess.find(self.guess)  # Getting the index of word to guess to swap the letter in guessing word
+                    self.word_to_guess = self.replace_string_at_index(self.word_to_guess, "-", self.index)  # Replacing guessed letter with blank in word to guess
+                    self.guessing_word = self.replace_string_at_index(self.guessing_word, self.guess, self.index)  # Replacing blank with guessed letter in guessing word
             # Case for checking if player already guessed this letter
             elif self.guess in self.guesses_list:
                 # Printing that player is already guessed this letter
@@ -309,7 +309,7 @@ class Hangman:
     # Player choosing category for game
     def choose_category(self):
         # Printing available categories
-        print(f"Choose category: fruits, vegetables, animals, car_brands, countries: ")
+        print("Choose category: fruits, vegetables, animals, car_brands, countries")
 
         # Getting correct input loop
         while True:
@@ -329,9 +329,9 @@ class Hangman:
             elif self.user_input == "animals":
                 # Returning animals index in categories list
                 return 2
-            # Case car_brands
+            # Case car brands
             elif self.user_input == "car_brands":
-                # Returning car_brands index in categories list
+                # Returning car brands index in categories list
                 return 3
             # Case for countries
             elif self.user_input == "countries":
@@ -347,7 +347,7 @@ class Hangman:
     def get_input(self):
         # Getting correct input loop
         while True:
-            # Printing guessing_word
+            # Printing guessing word
             print(self.guessing_word)
 
             # Getting user input
@@ -405,13 +405,7 @@ class Hangman:
         return new_word
 
 
-# Define main function
-def main():
-    # Create Hangman object
-    Hangman()
-
-
 # Main function
 if __name__ == "__main__":
     # Call main function
-    main()
+    Hangman()
