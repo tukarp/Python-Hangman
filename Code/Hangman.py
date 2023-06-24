@@ -407,5 +407,5 @@ class Hangman:
 
 # Main function
 if __name__ == "__main__":
-    # Call main function
+    # Create Hangman game object
     Hangman()
