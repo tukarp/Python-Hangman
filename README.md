@@ -10,11 +10,9 @@
 https://replit.com/@tukarp/Python-Hangman
 ```
 
-## Screenshots
+## Gameplay
 
-### Example Game Run
-
-![Screenshot](https://github.com/tukarp/Python-Hangman/blob/main/Images/Screenshot.png)
+https://github.com/tukarp/Python-Hangman/assets/114019481/c9ba2cad-7dd5-411a-838f-17ee30963045
 
 ### Requirements
 
