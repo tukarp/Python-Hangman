@@ -2,7 +2,7 @@
 
 ## About
 
-### This repository contains my *Python* implementation of the classic word-guessing game, *Hangman*. I created this project in fall of 2022 as part of my journey to learn programming in *Python*. I later updated this project to feature *Word Categories*, *Object Oriented Programming* and *Graphical User Interface*
+### This repository contains my *Python* implementation of the classic word-guessing game, *Hangman*. I created this project in fall of 2022 as part of my journey to learn programming in *Python*. I later updated this project to feature *Word Categories*, *Object Oriented Programming* and *Graphical User Interface*.
 
 <img src="https://github.com/tukarp/Hangman/blob/main/Images/Hangman.png" width="450" height="400"> 
 
