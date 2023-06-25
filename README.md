@@ -14,7 +14,7 @@ https://replit.com/@tukarp/Python-Hangman
 
 ### Example Game Run
 
-![Example Game Run](https://github.com/tukarp/Python-Hangman/blob/main/Images/Example%20Game%20Run.png)
+![Screenshot](https://github.com/tukarp/Python-Hangman/blob/main/Images/Screenshot.png)
 
 ### Requirements
 
