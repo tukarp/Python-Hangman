@@ -2,7 +2,7 @@
 
 ## My version of popular letter Guessing Game made in Python.
 
-<img src="https://github.com/tukarp/Hangman/blob/main/Images/Hangman.jpg" width="350" height="300"> 
+<img src="https://github.com/tukarp/Hangman/blob/main/Images/Hangman.png" width="350" height="300"> 
 
 ### You can play it right now under this link:
 
