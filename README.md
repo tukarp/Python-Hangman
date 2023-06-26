@@ -6,7 +6,7 @@
 
 <img src="https://github.com/tukarp/Hangman/blob/main/Images/Hangman.png" width="450" height="400"> 
 
-## Gameplay
+## Project Showcase
 
 https://github.com/tukarp/Python-Hangman/assets/114019481/c9ba2cad-7dd5-411a-838f-17ee30963045
 
