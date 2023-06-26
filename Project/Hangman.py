@@ -6,7 +6,7 @@
 import random
 
 
-# Initializing logo
+# Initialize logo
 LOGO = """                                                                                  
                         _  _                                                      
                        | || |__ _ _ _  __ _ _ __  __ _ _ _                        
